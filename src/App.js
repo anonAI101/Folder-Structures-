@@ -1,12 +1,19 @@
+import {BrowserRouter,Routes,Router,Route} from 'react-router-dom'
 import logo from './logo.svg';
 import './App.css';
 import Dashboard from './dashboard/Dashboard';
-
+import Login from '../src/pages/login'
+import Signup from '../src/pages/signup'
 function App() {
   return (
-    <div>
-    <Dashboard/>
-    </div>
+    <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<Dashboard/>}/>
+      <Route path='/login' element={<Login/>}/>
+      <Route path='/Signup' element={<Signup/>}/>
+    </Routes>
+    
+    </BrowserRouter>
   );
 }
 
