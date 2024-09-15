@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -49,6 +49,42 @@ const useStyles = makeStyles((theme) => ({
 export default function SignUp() {
   const classes = useStyles();
 
+  const [firstName,setFirstName]=useState("Adam")
+  const [LastName,setLastName]=useState("jeff")
+  const [email,setEmail]=useState("test@gmail.com")
+  const  [pass,setPass]=useState("2432452")
+  const   updateName =(e)=>{
+    setFirstName(e.target.value)
+
+  }
+const  updateLast=(e)=>{
+  setLastName(e.target.value)
+
+}
+
+const updateemail=(e)=>{
+
+setEmail(e.target.value)
+
+
+}
+
+const updatepass=(e)=>{
+
+setPass(e.target.value)
+
+
+}
+
+
+
+const getData=(e)=>{
+  e.preventDefault()
+  console.log(firstName,LastName,email,pass)
+}
+
+
+
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -63,7 +99,8 @@ export default function SignUp() {
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
-                autoComplete="fname"
+  onChange={updateName}
+autoComplete="fname"
                 name="firstName"
                 variant="outlined"
                 required
@@ -75,6 +112,7 @@ export default function SignUp() {
             </Grid>
             <Grid item xs={12} sm={6}>
               <TextField
+              onChange={updateLast}
                 variant="outlined"
                 required
                 fullWidth
@@ -86,6 +124,7 @@ export default function SignUp() {
             </Grid>
             <Grid item xs={12}>
               <TextField
+              onChange={updateemail}
                 variant="outlined"
                 required
                 fullWidth
@@ -97,6 +136,7 @@ export default function SignUp() {
             </Grid>
             <Grid item xs={12}>
               <TextField
+              onChange={updatepass}
                 variant="outlined"
                 required
                 fullWidth
@@ -115,6 +155,7 @@ export default function SignUp() {
             </Grid>
           </Grid>
           <Button
+          onClick={getData}
             type="submit"
             fullWidth
             variant="contained"

@@ -5,8 +5,12 @@ import Dashboard from './dashboard/Dashboard';
 import Login from '../src/pages/login'
 import Signup from '../src/pages/signup'
 import  Blog from '../src/components/blog'
+
+
 function App() {
   return (
+
+   
     <BrowserRouter>
     <Routes>
 
